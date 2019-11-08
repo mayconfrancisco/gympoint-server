@@ -66,12 +66,14 @@ yarn add jsonwebtoken
 
 yarn add yup //validators - validar entrada de dados na api - usavamos o JOI com o express-validation
 
+yarn add express-brute express-brute-redis
+
 
 
 
 ### TODOs
-bruteforce na session
 add exceptions - controllers, validations, services + criar um padrao de mensagens de erro
+    Considerar o bruteforce, ratelimit, yup, e nossas exceptions de negocio
 add Sentry
 ### TODOs
 
