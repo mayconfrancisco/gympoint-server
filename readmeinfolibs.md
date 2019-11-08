@@ -54,14 +54,25 @@ yarn sequelize db:migrate:undo //desfaz a ultima migration
 yarn sequelize db:migrate:undo:all //desfaz todas as migrations
 yarn sequelize seed:generate --name admin-user
 yarn sequelize db:seed:all
+//Crio o model manualmente no formato de classe - raramente utilizo o mode:generate
+yarn sequelize model:generate --name User --attributes id:integer name:string email:string password:virtual password_hash:string
+
+Criar o /src/database/index com as configuracoes de conexao e mapeamento dos models da base de dados relacional e/ou Nao relacional (Mongo e PG)
+Importar esse arquivo de configuracao de base no /src/app -- import './database';
 
 yarn add bcryptjs
+
+yarn add jsonwebtoken
+
+yarn add yup //validators - validar entrada de dados na api - usavamos o JOI com o express-validation
 
 
 
 
 ### TODOs
 add Sentry
+add exceptions
+add validations
 ### TODOs
 
 
@@ -70,9 +81,8 @@ add Sentry
 
 
 
-yarn add jsonwebtoken
 
-yarn add yup //validators - validar entrada de dados na api - usavamos o JOI com o express-validation
+
 
 yarn add multer //para lidar com upload de arquivo - multipart/form-data
 

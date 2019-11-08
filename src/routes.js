@@ -1,9 +1,13 @@
 import { Router } from 'express';
 
-const routes = Router();
+import SessionController from './app/controllers/SessionController';
 
-routes.get('/', (req, resp) => {
-  return resp.send('gello my friusd');
+const routes = new Router();
+
+routes.post('/sessions', SessionController.store);
+
+routes.get('/ping', (req, resp) => {
+  return resp.send('OK');
 });
 
 export default routes;

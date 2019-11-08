@@ -28,14 +28,22 @@
 
 ## Sobre o projeto
 
-Backend da aplicação **Gympoint**. O Gympoint é um app gerenciador de academia - Projeto desenvolvido como Desafio no Bootcamp da Rocketseat
+Backend da aplicação **Gympoint** em NodeJS. O Gympoint é um app gerenciador de academia - Projeto desenvolvido como Desafio no Bootcamp da Rocketseat
 
 ### Ferramentas
 
 - [Express](https://expressjs.com/)
+- [ExpressAsyncError](https://www.npmjs.com/package/express-async-errors)
 - [Sequelize](https://sequelize.org)
+- [Cors](https://www.npmjs.com/package/cors)
+- [Helmet](https://helmetjs.github.io)
+- [BcryptJS](https://www.npmjs.com/package/bcryptjs)
+- [JSONWebToken](https://www.npmjs.com/package/jsonwebtoken)
+- [Yup](https://www.npmjs.com/package/yup)
+
 - [Sucrase](https://github.com/alangpierce/sucrase)
 - [Nodemon](https://nodemon.io)
+- [Youch](https://www.npmjs.com/package/youch)
 - [ESLint](https://eslint.org)
 - [Prettier](https://prettier.io)
 - [EditorConfig](https://editorconfig.org)
