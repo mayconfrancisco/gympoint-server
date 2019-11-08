@@ -6,14 +6,21 @@ import StudentController from './app/controllers/StudentController';
 import validateSessionStore from './app/validators/SessionStore';
 import validateStudentStore from './app/validators/StudentStore';
 
+import authMiddleware from './app/middlewares/auth';
+
 const routes = new Router();
+
+routes.get('/ping', (req, resp) => {
+  return resp.json({ status: 'OK' });
+});
 
 routes.post('/sessions', validateSessionStore, SessionController.store);
 
-routes.post('/students', validateStudentStore, StudentController.store);
+/**
+ * AUTH MIDDLEWARE
+ */
+routes.use(authMiddleware);
 
-routes.get('/ping', (req, resp) => {
-  return resp.send('OK');
-});
+routes.post('/students', validateStudentStore, StudentController.store);
 
 export default routes;
