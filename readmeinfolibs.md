@@ -71,8 +71,7 @@ yarn add yup //validators - validar entrada de dados na api - usavamos o JOI com
 
 ### TODOs
 add Sentry
-add exceptions
-add validations
+add exceptions - controllers, validations, services + criar um padrao de mensagens de erro
 ### TODOs
 
 
