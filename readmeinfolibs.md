@@ -72,9 +72,12 @@ yarn add express-brute express-brute-redis
 
 
 ### TODOs
+ajustar retorno session sem passwordhash e as dts
+TDD
 add exceptions - controllers, validations, services + criar um padrao de mensagens de erro
     Considerar o bruteforce, ratelimit, yup, e nossas exceptions de negocio
 add Sentry
+
 ### TODOs
 
 

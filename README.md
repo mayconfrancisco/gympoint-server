@@ -34,6 +34,7 @@ Backend da aplicação **Gympoint** em NodeJS. O Gympoint é um app gerenciador 
 
 - [Express](https://expressjs.com/)
 - [ExpressAsyncErrors](https://www.npmjs.com/package/express-async-errors)
+- [BruteForce](https://www.npmjs.com/package/express-brute)
 - [Sequelize](https://sequelize.org)
 - [Cors](https://www.npmjs.com/package/cors)
 - [Helmet](https://helmetjs.github.io)

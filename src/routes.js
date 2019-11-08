@@ -4,10 +4,14 @@ import BruteRedis from 'express-brute-redis';
 
 import SessionController from './app/controllers/SessionController';
 import StudentController from './app/controllers/StudentController';
+import PlanController from './app/controllers/PlanController';
 
 import validateSessionStore from './app/validators/SessionStore';
 import validateStudentStore from './app/validators/StudentStore';
 import validateStudentUpdate from './app/validators/StudentUpdate';
+import validatePlanStore from './app/validators/PlanStore';
+import validatePlanUpdate from './app/validators/PlanUpdate';
+import validatePlanDelete from './app/validators/PlanDelete';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -41,5 +45,10 @@ routes.put(
   validateStudentUpdate,
   StudentController.update,
 );
+
+routes.post('/plans', validatePlanStore, PlanController.store);
+routes.get('/plans', PlanController.index);
+routes.put('/plans/:planId', validatePlanUpdate, PlanController.update);
+routes.delete('/plans/:planId', validatePlanDelete, PlanController.delete);
 
 export default routes;
