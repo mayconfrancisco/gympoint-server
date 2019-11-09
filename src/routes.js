@@ -5,6 +5,7 @@ import BruteRedis from 'express-brute-redis';
 import SessionController from './app/controllers/SessionController';
 import StudentController from './app/controllers/StudentController';
 import PlanController from './app/controllers/PlanController';
+import EnrollmentController from './app/controllers/EnrollmentController';
 
 import validateSessionStore from './app/validators/SessionStore';
 import validateStudentStore from './app/validators/StudentStore';
@@ -12,6 +13,7 @@ import validateStudentUpdate from './app/validators/StudentUpdate';
 import validatePlanStore from './app/validators/PlanStore';
 import validatePlanUpdate from './app/validators/PlanUpdate';
 import validatePlanDelete from './app/validators/PlanDelete';
+import validateEnrollmentStore from './app/validators/EnrollmentStore';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -50,5 +52,12 @@ routes.post('/plans', validatePlanStore, PlanController.store);
 routes.get('/plans', PlanController.index);
 routes.put('/plans/:planId', validatePlanUpdate, PlanController.update);
 routes.delete('/plans/:planId', validatePlanDelete, PlanController.delete);
+
+routes.post(
+  '/enrollments',
+  validateEnrollmentStore,
+  EnrollmentController.store,
+);
+routes.get('/enrollments', EnrollmentController.index);
 
 export default routes;

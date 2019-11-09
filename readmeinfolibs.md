@@ -68,16 +68,17 @@ yarn add yup //validators - validar entrada de dados na api - usavamos o JOI com
 
 yarn add express-brute express-brute-redis
 
-
+yarn add date-fns@next //lib para lidar com datas - @next para pegar a ultima versao - !!2.0-alpha!!
 
 
 ### TODOs
-ajustar retorno session sem passwordhash e as dts
+add sendmail students in enrollment
 TDD
 add exceptions - controllers, validations, services + criar um padrao de mensagens de erro
     Considerar o bruteforce, ratelimit, yup, e nossas exceptions de negocio
 add Sentry
 
+Post Linkedin https://www.theregister.co.uk/2019/11/07/microsoft_react_native/
 ### TODOs
 
 
@@ -90,8 +91,6 @@ add Sentry
 
 
 yarn add multer //para lidar com upload de arquivo - multipart/form-data
-
-yarn add date-fns@next //lib para lidar com datas - @next para pegar a ultima versao - !!2.0-alpha!!
 
 yarn add mongoose //ODM para mongodb
 
