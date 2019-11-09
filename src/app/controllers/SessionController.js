@@ -18,8 +18,10 @@ class SessionController {
         .json({ error: 'E-mail or Password does not match' });
     }
 
+    const { id, name, createdAt, updatedAt } = user;
+
     return resp.json({
-      user,
+      user: { id, name, email, createdAt, updatedAt },
       token: jwt.sign({ id: user.id }, process.env.APP_SECRET, {
         expiresIn: process.env.EXPIRES_IN,
       }),
