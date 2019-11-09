@@ -14,6 +14,8 @@ import validatePlanStore from './app/validators/PlanStore';
 import validatePlanUpdate from './app/validators/PlanUpdate';
 import validatePlanDelete from './app/validators/PlanDelete';
 import validateEnrollmentStore from './app/validators/EnrollmentStore';
+import validateEnrollmentUpdate from './app/validators/EnrollmentUpdate';
+import validateEnrollmentDelete from './app/validators/EnrollmentDelete';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -59,5 +61,15 @@ routes.post(
   EnrollmentController.store,
 );
 routes.get('/enrollments', EnrollmentController.index);
+routes.put(
+  '/enrollments/:enrollmentId',
+  validateEnrollmentUpdate,
+  EnrollmentController.update,
+);
+routes.delete(
+  '/enrollments/:enrollmentId',
+  validateEnrollmentDelete,
+  EnrollmentController.delete,
+);
 
 export default routes;

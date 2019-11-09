@@ -9,6 +9,7 @@ class Enrollment extends Model {
         startDate: Sequelize.DATE,
         endDate: Sequelize.DATE,
         price: Sequelize.FLOAT,
+        canceledAt: Sequelize.DATE,
       },
       {
         sequelize,

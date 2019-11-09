@@ -44,6 +44,43 @@ class EnrollmentController {
 
     resp.json(enrollments);
   }
+
+  /**
+   * Update
+   */
+  async update(req, resp) {
+    const { enrollmentId } = req.params;
+
+    const enrollment = await Enrollment.findByPk(enrollmentId);
+
+    if (!enrollment) {
+      return resp.status(400).json({ error: 'Enrollment not found' });
+    }
+
+    await enrollment.update(req.body);
+
+    return resp.json(enrollment);
+  }
+
+  /**
+   * Delete
+   */
+  async delete(req, resp) {
+    const { enrollmentId } = req.params;
+
+    const enrollment = await Enrollment.findByPk(enrollmentId);
+
+    if (!enrollment) {
+      return resp.status(400).json({ error: 'Enrollment not found' });
+    }
+
+    if (enrollment && !enrollment.canceledAt) {
+      enrollment.canceledAt = new Date();
+      await enrollment.save();
+    }
+
+    return resp.json(enrollment);
+  }
 }
 
 export default new EnrollmentController();

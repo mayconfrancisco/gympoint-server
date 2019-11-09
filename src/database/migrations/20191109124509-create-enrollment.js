@@ -33,6 +33,10 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
+      canceled_at: {
+        type: Sequelize.DATE,
+        allowNull: true,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
