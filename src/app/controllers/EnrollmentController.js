@@ -3,6 +3,9 @@ import { parseISO, addMonths } from 'date-fns';
 import Enrollment from '../models/Enrollment';
 import Plan from '../models/Plan';
 
+import Queue from '../../lib/Queue';
+import EnrollmentMail from '../jobs/EnrollmentMail';
+
 class EnrollmentController {
   /**
    * Store
@@ -31,7 +34,16 @@ class EnrollmentController {
       price,
     });
 
-    // TODO - add envio de email para aluno
+    enrollment.setDataValue('plan', { id: plan.id, title: plan.title });
+
+    const student = await enrollment.getStudent();
+    enrollment.setDataValue('student', {
+      id: student.id,
+      name: student.name,
+      email: student.email,
+    });
+
+    Queue.add(EnrollmentMail.key, { enrollment });
 
     return resp.json(enrollment);
   }
