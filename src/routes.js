@@ -7,6 +7,8 @@ import StudentController from './app/controllers/StudentController';
 import PlanController from './app/controllers/PlanController';
 import EnrollmentController from './app/controllers/EnrollmentController';
 import CheckinController from './app/controllers/CheckinController';
+import HelpOrderController from './app/controllers/HelpOrderController';
+import StudentHelpOrderController from './app/controllers/StudentHelpOrderController';
 
 import validateSessionStore from './app/validators/SessionStore';
 import validateStudentStore from './app/validators/StudentStore';
@@ -19,6 +21,9 @@ import validateEnrollmentUpdate from './app/validators/EnrollmentUpdate';
 import validateEnrollmentDelete from './app/validators/EnrollmentDelete';
 import validateCheckinStore from './app/validators/CheckinStore';
 import validateCheckinIndex from './app/validators/CheckinIndex';
+import validateStudentHelpOrderStore from './app/validators/StudentHelpOrderStore';
+import validateStudentHelpOrderIndex from './app/validators/StudentHelpOrderIndex';
+import validateHelpOrderStore from './app/validators/HelpOrderStore';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -45,6 +50,17 @@ routes.post(
   '/students/:studentId/checkins',
   validateCheckinStore,
   CheckinController.store,
+);
+
+routes.post(
+  '/students/:studentId/help-orders',
+  validateStudentHelpOrderStore,
+  StudentHelpOrderController.store,
+);
+routes.get(
+  '/students/:studentId/help-orders',
+  validateStudentHelpOrderIndex,
+  StudentHelpOrderController.index,
 );
 
 /**
@@ -85,6 +101,13 @@ routes.get(
   '/students/:studentId/checkins',
   validateCheckinIndex,
   CheckinController.index,
+);
+
+routes.get('/help-orders', HelpOrderController.index);
+routes.post(
+  '/help-orders/:helpOrderId/answer',
+  validateHelpOrderStore,
+  HelpOrderController.store,
 );
 
 export default routes;

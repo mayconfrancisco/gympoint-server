@@ -79,7 +79,7 @@ yarn add bee-queue //para lidar com filas - alternativa mais performatica ao KUE
 
 
 ### TODOs
-Se mandar um student que nao existe no Enrollment da problema - testar com captura de exception? No checkin tb da problema, claro
+Se mandar um student que nao existe no Enrollment da problema - testar com captura de exception? No checkin tb da problema, claro. No StudentHelpOrder Tb
 add exceptions - controllers, validations, services + criar um padrao de mensagens de erro
     Considerar o bruteforce, ratelimit, yup, e nossas exceptions de negocio
 add Sentry
