@@ -6,6 +6,7 @@ import SessionController from './app/controllers/SessionController';
 import StudentController from './app/controllers/StudentController';
 import PlanController from './app/controllers/PlanController';
 import EnrollmentController from './app/controllers/EnrollmentController';
+import CheckinController from './app/controllers/CheckinController';
 
 import validateSessionStore from './app/validators/SessionStore';
 import validateStudentStore from './app/validators/StudentStore';
@@ -16,6 +17,8 @@ import validatePlanDelete from './app/validators/PlanDelete';
 import validateEnrollmentStore from './app/validators/EnrollmentStore';
 import validateEnrollmentUpdate from './app/validators/EnrollmentUpdate';
 import validateEnrollmentDelete from './app/validators/EnrollmentDelete';
+import validateCheckinStore from './app/validators/CheckinStore';
+import validateCheckinIndex from './app/validators/CheckinIndex';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -36,6 +39,12 @@ routes.post(
   bruteForce.prevent,
   validateSessionStore,
   SessionController.store,
+);
+
+routes.post(
+  '/students/:studentId/checkins',
+  validateCheckinStore,
+  CheckinController.store,
 );
 
 /**
@@ -70,6 +79,12 @@ routes.delete(
   '/enrollments/:enrollmentId',
   validateEnrollmentDelete,
   EnrollmentController.delete,
+);
+
+routes.get(
+  '/students/:studentId/checkins',
+  validateCheckinIndex,
+  CheckinController.index,
 );
 
 export default routes;

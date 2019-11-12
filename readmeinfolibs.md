@@ -79,11 +79,15 @@ yarn add bee-queue //para lidar com filas - alternativa mais performatica ao KUE
 
 
 ### TODOs
-Se mandar um student que nao existe no Enrollment da problema - testar com captura de exception?
-TDD
+Se mandar um student que nao existe no Enrollment da problema - testar com captura de exception? No checkin tb da problema, claro
 add exceptions - controllers, validations, services + criar um padrao de mensagens de erro
     Considerar o bruteforce, ratelimit, yup, e nossas exceptions de negocio
 add Sentry
+
+
+Nos proximos temos que:
+1 comecar com o tratamento de exceptions de negocio;
+2 comecar com TDD
 
 Post Linkedin https://www.theregister.co.uk/2019/11/07/microsoft_react_native/
 ### TODOs

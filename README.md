@@ -41,6 +41,9 @@ Backend da aplicação **Gympoint** em NodeJS. O Gympoint é um app gerenciador 
 - [BcryptJS](https://www.npmjs.com/package/bcryptjs)
 - [JSONWebToken](https://www.npmjs.com/package/jsonwebtoken)
 - [Yup](https://www.npmjs.com/package/yup)
+- [Nodemailer](https://nodemailer.com/about/)
+- [Handlebars](https://www.npmjs.com/package/express-handlebars)
+- [BeeQueue](https://github.com/bee-queue/bee-queue)
 
 - [Sucrase](https://github.com/alangpierce/sucrase)
 - [Nodemon](https://nodemon.io)
