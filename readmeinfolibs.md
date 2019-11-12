@@ -70,6 +70,13 @@ yarn add express-brute express-brute-redis
 
 yarn add date-fns@next //lib para lidar com datas - @next para pegar a ultima versao - !!2.0-alpha!!
 
+yarn add nodemailer //lib para envio de emails
+
+yarn add express-handlebars nodemailer-express-handlebars //Handlebars TemplateEngine - envio de email HTML
+
+yarn add bee-queue //para lidar com filas - alternativa mais performatica ao KUE, mas que nao possui priorizacao de jobs e outras funcionalidades
+
+
 
 ### TODOs
 add sendmail students in enrollment
@@ -94,14 +101,8 @@ yarn add multer //para lidar com upload de arquivo - multipart/form-data
 
 yarn add mongoose //ODM para mongodb
 
-yarn add nodemailer //lib para envio de emails
-
-yarn add express-handlebars nodemailer-express-handlebars //Handlebars TemplateEngine - envio de email HTML
-
-yarn add bee-queue //para lidar com filas - alternativa mais performatica ao KUE, mas que nao possui priorizacao de jobs e outras funcionalidades
-
 yarn add ioredis //client redis que ja possui integracao com promise (async/await) <br/>
-// Fazer cache apenas de querys um pouco mais pesadas e que não tenham tanto sensibilidade temporal
+// Fazer CACHE apenas de querys um pouco mais pesadas e que não tenham tanto sensibilidade temporal
 
 
 
