@@ -1,10 +1,13 @@
 import { Op } from 'sequelize';
 import HelpOrder from '../models/HelpOrder';
 
+import AnswerMail from '../jobs/AnswerMail';
+import Queue from '../../lib/Queue';
+
 class HelpOrderController {
   async index(req, resp) {
     const { all } = req.query;
-    const where = { answer: { [Op.ne]: null } };
+    const where = { answer: { [Op.eq]: null } };
 
     if (all === 'y') {
       delete where.answer;
@@ -29,6 +32,14 @@ class HelpOrderController {
     helpOrder.answerAt = new Date();
 
     await helpOrder.save();
+
+    const student = await helpOrder.getStudent();
+    helpOrder.setDataValue('student', {
+      name: student.name,
+      email: student.email,
+    });
+
+    Queue.add(AnswerMail.key, { helpOrder });
 
     return resp.json(helpOrder);
   }

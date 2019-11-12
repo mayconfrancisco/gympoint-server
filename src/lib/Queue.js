@@ -1,7 +1,8 @@
 import Bee from 'bee-queue';
 import EnrollmentMail from '../app/jobs/EnrollmentMail';
+import AnswerMail from '../app/jobs/AnswerMail';
 
-const jobs = [EnrollmentMail];
+const jobs = [EnrollmentMail, AnswerMail];
 
 class Queue {
   constructor() {
