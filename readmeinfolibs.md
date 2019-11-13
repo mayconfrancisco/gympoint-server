@@ -41,6 +41,9 @@ yarn add youch //formatar as exceptions capturados no exception handler para jso
 yarn add @sentry/node //add SENTRY para monitorar o projeto quando for para outros ambientes http://sentry.io <br/>
 //da para integrar o SENTRY ao Slack, Github... definir os tickets para pessoas da equipe
 
+#### TDD
+Leia o arquivo [readmeinfolibs.md](readmeinfolibs.md)
+
 yarn add sequelize
 yarn add sequelize-cli -D
 criar o arquivo .sequelizerc
@@ -79,24 +82,17 @@ yarn add bee-queue //para lidar com filas - alternativa mais performatica ao KUE
 
 
 ### TODOs
+TDD
+YUP para validação das rotas - Exception handlers para capturar e tratar as exceptions
+BruteForce na Session - RateLimit nas demais rotas quando fizer sentido - AuthMidleware para injetar os dados do JWT
+Services - Para a logica nao ficar toda no Controller
+Cache da app com o ioredis - apenas nas rotas que fazem sentido
+
 Se mandar um student que nao existe no Enrollment da problema - testar com captura de exception? No checkin tb da problema, claro. No StudentHelpOrder Tb
 add exceptions - controllers, validations, services + criar um padrao de mensagens de erro
     Considerar o bruteforce, ratelimit, yup, e nossas exceptions de negocio
 add Sentry
-
-
-Nos proximos temos que:
-1 comecar com o tratamento de exceptions de negocio;
-2 comecar com TDD
-
-Post Linkedin https://www.theregister.co.uk/2019/11/07/microsoft_react_native/
 ### TODOs
-
-
-
-
-
-
 
 
 
