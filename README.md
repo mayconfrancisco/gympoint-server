@@ -23,12 +23,39 @@
 
 <p align="center">
   <a href="#sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rodar-o-projeto">Rodar o projeto</a>
   <a href="#licença">Licença</a>
 </p>
 
 ## Sobre o projeto
 
 Backend da aplicação **Gympoint** em NodeJS. O Gympoint é um app gerenciador de academia - Projeto desenvolvido como Desafio no Bootcamp da Rocketseat
+
+### Rodar o projeto:
+
+Sete todas as configurações da aplicação em um arquivo ``.env`` - há um ``.env.example`` para servir de base
+
+OPCIONAL: Para criar uma instância do **postgres** com o docker em sua máquina
+
+``docker run --name database-pg -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres``
+
+OPCIONAL: Para criar uma instância do **mongo** com o docker em sua máquina
+
+``docker run --name database-mongo -p 27017:27017 -d -t mongo``
+
+OPCIONAL: Para criar uma instância do **redis** com o docker em sua máquina
+
+``docker run --name redis -p 6379:6379 -d -t redis:alpine``
+
+
+Para baixar as dependências
+
+``yarn``
+
+Para iniciar a aplicação
+
+``yarn dev``
+
 
 ### Ferramentas
 
