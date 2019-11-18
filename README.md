@@ -23,13 +23,15 @@
 
 <p align="center">
   <a href="#sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rodar-o-projeto">Rodar o projeto</a>
+  <a href="#rodar-o-projeto">Rodar o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#licença">Licença</a>
 </p>
 
 ## Sobre o projeto
 
 Backend da aplicação **Gympoint** em NodeJS. O Gympoint é um app gerenciador de academia - Projeto desenvolvido como Desafio no Bootcamp da Rocketseat
+
+
 
 ### Rodar o projeto:
 
@@ -57,6 +59,7 @@ Para iniciar a aplicação
 ``yarn dev``
 
 
+
 ### Ferramentas
 
 - [Express](https://expressjs.com/)
@@ -78,6 +81,7 @@ Para iniciar a aplicação
 - [ESLint](https://eslint.org)
 - [Prettier](https://prettier.io)
 - [EditorConfig](https://editorconfig.org)
+
 
 
 ## Licença
